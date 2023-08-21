@@ -1,12 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 # ## <ins>THE BLACKJACK</ins> (Casino Banking Game) :
 
 # ### `GLOBAL VARIABLE`
-
-# In[1]:
-
 
 import random
 
@@ -19,12 +14,6 @@ playing = True
 
 # ### `CARD CLASS`
 
-# A Card object only needs two attributes: suits and ranks. You might add an attribute for "values" - but here, I choose to handle value later when developing **`Hand class`**.</br>
-# In addition to the Card's **`__init__`** method, consider adding a **`__str__`** method that. As when asked to print a Card, returns a string in the form *"Two of Hearts"*.
-
-# In[2]:
-
-
 class Card():
     
     def __init__(self,suit,rank):
@@ -36,12 +25,6 @@ class Card():
 
 
 # ### `DECK CLASS`
-
-# In Deck class all 52 Card objects have to be stored in a list, inside Deck **`__init__`** method, that can be shuffeled later. Sequences of suits and ranks must be iterated to build out each card.</br>
-# In addition to an **`__init__`** method, also have to add methods to shuffle the deck, and to deal out cards during gameplay.
-
-# In[3]:
-
 
 class Deck():
     
@@ -67,17 +50,9 @@ class Deck():
 
 
 # **Check :**</br>
-# *This how the Deck looks like! :*
-
-# In[4]:
-
 
 test_deck = Deck()
 print(test_deck)
-
-
-# In[5]:
-
 
 # AFTER SHUFFLING THE DECK:
 
@@ -86,11 +61,6 @@ print(test_deck)
 
 
 # ### `HAND CLASS`
-
-# To holding the Card objects dealt from the Deck, the **`Hand class`** is used to calculate the value of those cards using the ***values*** dictionary in the **`Global Variable`**. It may also need to adjust for the value of Aces, when appropriate.
-
-# In[6]:
-
 
 class Hand():
     
@@ -119,9 +89,6 @@ class Hand():
 
 # **Check** for **`add_card()`** :
 
-# In[7]:
-
-
 test_deck = Deck()
 test_deck.shuffle()
 
@@ -135,11 +102,6 @@ print(test_player.value)
 
 
 # ### `CHIPS CLASS`
-
-# In addition to decks of cards and hands, we need to keep track of a Player's starting chips, bets, and ongoing winnings. This could be done using *global variables*, but here I create a **`Chips class`** to get my hands dirty with **Object Oriented Programming**.
-
-# In[8]:
-
 
 class Chips:
     
@@ -155,11 +117,6 @@ class Chips:
 
 
 # ### `TAKE_BET() FUNCTION`
-
-# To check that a Player's bet can be covered by their available chips. As it is asking the user for an integer value, here we can use `try`/`except`. 
-
-# In[9]:
-
 
 def take_bet(chips):
     
@@ -177,12 +134,6 @@ def take_bet(chips):
 
 # ### `HIT() FUNCTION`
 
-# **Either player can take hits until they bust**. This function will be called during gameplay anytime a Player requests a hit or a Dealer's hand is less than 17. </br>
-# It should take in Deck and Hand objects as arguments, and deal one card off the deck and add it to the Hand. Also check for aces in the event that a player's hand exceeds 21.
-
-# In[10]:
-
-
 def hit(deck,hand):
     single_card = deck.deal()
     hand.add_card(single_card)
@@ -190,12 +141,6 @@ def hit(deck,hand):
 
 
 # ### `HIT_OR_STAND() FUNCTION`
-
-# This function **prompting the Player to Hit or Stand**. It accept the deck and the player's hand as arguments, and assign playing as a global variable.</br>
-# If the Player Hits, the above `hit()` function will be implemented. If the Player Stands, playing variable should be false to control the behavior of a `while` loop later on in the code.
-
-# In[11]:
-
 
 def hit_or_stand(deck,hand):
     global playing     # To control an upcoming while loop
@@ -215,13 +160,6 @@ def hit_or_stand(deck,hand):
 
 
 # ### `SHOW_CARDS() FUNCTION`
-
-# Here there are two functions, 1st function `show_some()` is When the game starts, and after each time Player takes a card, the dealer's first card is hidden and all of Player's cards are visible.</br> 
-# And at the end 2nd function `show_all()` is to show all hand's cards are shown.</br>
-# These functions are to print both **Player's** and **Dealer's** cards and each hand's **total value**.
-
-# In[12]:
-
 
 def show_some(player,dealer):
     
@@ -245,22 +183,7 @@ def show_all(player,dealer):
     # Display value
     print(f"Value of Player's Hand is: {player.value}")
 
-
-# Here asterisk **`*`** symbol is used to iterate through loop and print every item in the collection, works same as:
-#         
-#         print("\n Player's Hand: ")
-#         for card in player.cards:
-#             print(cards)
-# for **`*player.cards`**.
-# 
-# And the **`sep='\n '`** argument is to print each item on a separate line.
-
 # ### `PLAYER_BUSTS()` & `PLAYER_WINS() FUNCTION`
-
-# These two functions are to handle each of the game situations, where it's going to an **end** by passing player's hand, dealer's hand and chips as needed.
-
-# In[13]:
-
 
 def player_busts(player,dealer,chips):
     print("Player BUSTS!")
@@ -283,9 +206,6 @@ def push(player,dealer):
 
 
 # ### `THE ENDGAME`
-
-# In[14]:
-
 
 while True:
     
