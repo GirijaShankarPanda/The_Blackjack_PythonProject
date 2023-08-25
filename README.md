@@ -2,7 +2,8 @@
 
 ![Black-Jack0](https://github.com/GirijaShankarPanda/The_Blackjack_PythonProject/assets/104772357/922d8001-e648-4100-916f-c86f1f5a869d)
 
-***Have you ever been in a Casino? The alluring atmosphere, the dazzling lights, the clinking of chips, and the intense anticipation in the air? One of the most iconic and widely played games you'll find there is*** **`Blackjack`,** ***also known as 21. The game's primary objective is to beat the dealer by having a hand value that is closer to 21 than the dealer's hand without exceeding 21. Each player competes individually against the dealer, and players do not compete against each other.***
+### *Have you ever been in a Casino?*</br> 
+***The alluring atmosphere, the dazzling lights, the clinking of chips, and the intense anticipation in the air? One of the most iconic and widely played games you'll find there is*** **`Blackjack`,** ***also known as 21. The game's primary objective is to beat the dealer by having a hand value that is closer to 21 than the dealer's hand without exceeding 21. Each player competes individually against the dealer, and players do not compete against each other.***
 
 > ## Here's a breakdown of how the game works:
 
